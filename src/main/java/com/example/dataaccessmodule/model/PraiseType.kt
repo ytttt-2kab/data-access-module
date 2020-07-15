@@ -2,6 +2,7 @@ package com.example.dataaccessmodule.model
 
 import org.apache.ibatis.type.BaseTypeHandler
 import org.apache.ibatis.type.JdbcType
+import org.apache.ibatis.type.MappedTypes
 import java.sql.CallableStatement
 import java.sql.PreparedStatement
 import java.sql.ResultSet
@@ -22,6 +23,7 @@ enum class PraiseType(val intValue: Int) {
     }
 }
 
+@MappedTypes(PraiseType::class)
 class PraiseTypeHandler : BaseTypeHandler<PraiseType>() {
     override fun getNullableResult(p0: ResultSet, p1: String): PraiseType {
         return PraiseType.getByIntValue(p0.getInt(p1))
