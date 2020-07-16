@@ -15,15 +15,11 @@ enum class PraiseType(val intValue: Int) {
 
     companion object {
         fun getByIntValue(intValue: Int) : PraiseType {
-            return Arrays.stream(values())
-                    .filter{it.equals(intValue)}
-                    .findFirst()
-                    .orElse(NO_VALUE);
+            return values().firstOrNull{it.intValue==intValue} ?: NO_VALUE
         }
     }
 }
 
-@MappedTypes(PraiseType::class)
 class PraiseTypeHandler : BaseTypeHandler<PraiseType>() {
     override fun getNullableResult(p0: ResultSet, p1: String): PraiseType {
         return PraiseType.getByIntValue(p0.getInt(p1))

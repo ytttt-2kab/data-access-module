@@ -10,6 +10,6 @@
         SELECT count(*) FROM PRAISE_INF WHERE user_id=#{userId};
     </select>
     <select id="countByPraiseType" parameterType="com.example.dataaccessmodule.model.PraiseType" resultType="_int">
-        SELECT count(*) FROM PRAISE_INF WHERE praise_type=#{praiseType.intValue};
+        SELECT count(*) FROM PRAISE_INF WHERE praise_type=#{praiseType};
     </select>
 </mapper>

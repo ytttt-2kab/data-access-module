@@ -4,7 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeHandlers>
-        <typeHandler handler="com.example.dataaccessmodule.model.PraiseTypeHandler"
-                     javaType="com.example.dataaccessmodule.model.PraiseType"/>
+        <typeHandler handler="com.example.dataaccessmodule.model.PraiseTypeHandler"/>
     </typeHandlers>
 </configuration>
